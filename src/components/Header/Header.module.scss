@@ -85,8 +85,9 @@
 
 .card{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 120px;
     gap: 15px;
 
 }
@@ -112,9 +113,110 @@
     z-index: 5;
 
 
+    &::after{
+        content: '';
+        width: 20px;
+        height: 80px;
+        background-color: black;
+        display: inline-block;
+    }
+
+    &::before{
+        content: '';
+        width: 20px;
+        height: 120px;
+        background-color: rgb(255, 0, 0);
+        display: inline-block;
+    }
+
+
     img{
         position: absolute;
         z-index: -1;
         width: 100%;
     }
 }
+
+
+.next{
+    width: 70px;
+    height: 276px;
+    border: none;
+    background: linear-gradient(180deg, #990000 0%, #CA0000 49.5%, #990000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.inner{
+
+    display: flex;
+    gap: 52px;
+    flex-direction: column;
+
+    margin-right: 52px;
+    div{
+        width: 75px;
+        height: 75px;
+        border: 2px solid white;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 500;
+        color: white;
+        text-align: center;
+    }
+}
+
+.box{
+
+    button{
+        background-color: black;
+        color: white;
+        padding: 20px 40px;
+        text-transform: uppercase;
+        border: none;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        position: relative;
+        margin-left: auto;
+        display: block;
+        cursor: pointer;
+        bottom: -150px;
+        z-index: 5;
+
+    }
+}
+
+
+.after_card{
+    display: flex;
+    align-items: center;
+    background: #990000;
+    width: max-content;
+
+    margin-top: 51px;
+    margin-left: 52px;
+    position: relative;
+    top: -120px;
+    z-index: 5;
+
+    p{
+        color: white;
+        background-color: black;
+        max-width: 52px;
+        padding: 30px;
+    }
+
+    img{
+        max-width: 250px;
+    }
+
+}
+
+
