@@ -2,16 +2,21 @@ import React, { useState, useRef, useEffect } from 'react';
 import s from './Header.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { useAppContext } from '../../context';
 
 const Header = () => {
+
+
+    const {isCard1, isCard2, toggleOpen1, toggleOpen2} = useAppContext()
+
   const [isActive, setIsActive] = useState(false);
   const [prevSlideImage, setPrevSlideImage] = useState('/moto-2.png'); // Начальное изображение
 
   const swiperRef = useRef(null);
 
   const slides = [
-    { id: 1, title: 'DUГATI', img: '/moto-1.png', details: '215 CV, 300 km/h, NPX 25/30' },
-    { id: 2, title: 'DUГATI', img: '/moto-2.png', details: '168 CV, 274 km/h, Twin Pulse' },
+    { id: 1, title: 'DUGATI', img: '/Ducati (1).png', details: '215 CV, 300 km/h, NPX 25/30' },
+    { id: 2, title: 'DUGATI', img: '/Ducati (2).png', details: '168 CV, 274 km/h, Twin Pulse' },
   ];
 
 
@@ -91,7 +96,7 @@ const Header = () => {
                     DUГATI
                     <img src="/Ducati (1).png" alt="moto" />
                   </h1>
-                  <button>Read more</button>
+                  <button onClick={toggleOpen1}>Read more</button>
                 </div>
 
                 <div className={s.inner}>
@@ -119,7 +124,7 @@ const Header = () => {
                     DUГATI
                     <img src="/Ducati (2).png" alt="moto" />
                   </h1>
-                  <button>Read more</button>
+                  <button onClick={toggleOpen2}>Read more</button>
                 </div>
 
                 <div className={s.inner}>
